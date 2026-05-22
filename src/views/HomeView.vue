@@ -44,7 +44,7 @@ const stats = [
     <AppHeader />
 
     <main>
-      <section class="bg-gradient-to-br from-blue-800 to-blue-900 text-white">
+      <section class="bg-linear-to-br from-blue-800 to-blue-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <div class="max-w-3xl">
             <p class="text-blue-200 text-sm font-medium uppercase tracking-wider mb-3">
@@ -55,7 +55,7 @@ const stats = [
               <span class="text-blue-200">PLGU Surigao del Norte</span>
             </h1>
             <p class="text-blue-100 text-base sm:text-lg leading-relaxed max-w-2xl">
-              A comprehensive 15-year roadmap guiding Surigao del Norte toward a future-ready, resilient, and
+              A comprehensive roadmap guiding Surigao del Norte toward a future-ready, resilient, and
               sustainable province through five phased implementation cycles from 2028 to 2040.
             </p>
           </div>
