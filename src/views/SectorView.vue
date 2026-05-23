@@ -49,7 +49,7 @@ const SECTOR_ICONS: Record<string, Component> = {
       <section :class="['text-white', colors?.bg ?? 'bg-blue-700']">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div class="flex items-start gap-4">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/15 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center shrink-0 mt-0.5">
               <component :is="SECTOR_ICONS[sector.slug] ?? Layers" :size="32" class="text-white" />
             </div>
             <div class="min-w-0">
