@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { Map } from '@lucide/vue'
 </script>
 
 <template>
@@ -7,8 +8,8 @@ import { RouterLink } from 'vue-router'
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <RouterLink to="/" class="flex items-center gap-2.5 min-w-0">
-          <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-lg flex-shrink-0">
-            🗺️
+          <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
+            <Map :size="18" class="text-white" />
           </div>
           <div class="min-w-0">
             <p class="text-sm font-bold leading-tight truncate">SSC Roadmap</p>

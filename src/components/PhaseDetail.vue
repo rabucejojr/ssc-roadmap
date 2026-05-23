@@ -1,17 +1,19 @@
 <script setup lang="ts">
+import type { Component } from 'vue'
 import { ref } from 'vue'
 import type { Phase } from '@/types/roadmap'
 import ProgramsParser from './ProgramsParser.vue'
+import { Target, BarChart2, ClipboardList } from '@lucide/vue'
 
 defineProps<{ phase: Phase }>()
 
 type Tab = 'milestone' | 'kpis' | 'programs'
 const activeTab = ref<Tab>('milestone')
 
-const tabs: { key: Tab; label: string; icon: string }[] = [
-  { key: 'milestone', label: 'Milestone', icon: '🎯' },
-  { key: 'kpis', label: 'KPIs', icon: '📊' },
-  { key: 'programs', label: 'Programs & Policies', icon: '📋' },
+const tabs: { key: Tab; label: string; icon: Component }[] = [
+  { key: 'milestone', label: 'Milestone', icon: Target },
+  { key: 'kpis', label: 'KPIs', icon: BarChart2 },
+  { key: 'programs', label: 'Programs & Policies', icon: ClipboardList },
 ]
 </script>
 
@@ -22,14 +24,14 @@ const tabs: { key: Tab; label: string; icon: string }[] = [
         v-for="tab in tabs"
         :key="tab.key"
         :class="[
-          'flex-1 sm:flex-none px-4 py-3 text-xs sm:text-sm font-medium transition-colors duration-150 flex items-center justify-center gap-1.5',
+          'flex-1 sm:flex-none px-4 py-3 text-xs sm:text-sm font-medium transition-colors duration-150 flex items-center justify-center gap-1.5 cursor-pointer',
           activeTab === tab.key
             ? 'border-b-2 border-blue-600 text-blue-700 bg-blue-50/50'
             : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50',
         ]"
         @click="activeTab = tab.key"
       >
-        <span>{{ tab.icon }}</span>
+        <component :is="tab.icon" :size="14" />
         <span>{{ tab.label }}</span>
       </button>
     </div>

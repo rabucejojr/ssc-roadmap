@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Component } from 'vue'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import AppHeader from '@/components/AppHeader.vue'
@@ -7,6 +8,7 @@ import SubsectorCard from '@/components/SubsectorCard.vue'
 import { useRoadmap } from '@/composables/useRoadmap'
 import { getSectorColors } from '@/utils/roadmap'
 import type { Crumb } from '@/components/BreadcrumbNav.vue'
+import { Landmark, Users, TrendingUp, Leaf, Building2, Layers } from '@lucide/vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -26,12 +28,12 @@ const crumbs = computed((): Crumb[] => [
   { label: sector.value?.title ?? '' },
 ])
 
-const SECTOR_ICONS: Record<string, string> = {
-  'development-administration': '🏛️',
-  'social-services': '🤝',
-  economy: '📈',
-  environment: '🌿',
-  infrastructure: '🏗️',
+const SECTOR_ICONS: Record<string, Component> = {
+  'development-administration': Landmark,
+  'social-services': Users,
+  economy: TrendingUp,
+  environment: Leaf,
+  infrastructure: Building2,
 }
 </script>
 
@@ -47,9 +49,9 @@ const SECTOR_ICONS: Record<string, string> = {
       <section :class="['text-white', colors?.bg ?? 'bg-blue-700']">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div class="flex items-start gap-4">
-            <span class="text-4xl sm:text-5xl shrink-0 mt-1">
-              {{ SECTOR_ICONS[sector.slug] ?? '📋' }}
-            </span>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/15 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+              <component :is="SECTOR_ICONS[sector.slug] ?? Layers" :size="32" class="text-white" />
+            </div>
             <div class="min-w-0">
               <p class="text-white/70 text-xs font-medium uppercase tracking-wider mb-1">Sector</p>
               <h1 class="text-2xl sm:text-3xl font-bold leading-tight mb-3">{{ sector.title }}</h1>

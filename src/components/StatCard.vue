@@ -1,17 +1,20 @@
 <script setup lang="ts">
+import type { Component } from 'vue'
+
 defineProps<{
   label: string
   value: string | number
   sublabel?: string
-  icon: string
+  icon: Component
+  iconColor?: string
   colorClass?: string
 }>()
 </script>
 
 <template>
   <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex items-start gap-4">
-    <div :class="['w-12 h-12 rounded-lg flex items-center justify-center text-2xl flex-shrink-0', colorClass ?? 'bg-blue-50']">
-      {{ icon }}
+    <div :class="['w-12 h-12 rounded-lg flex items-center justify-center shrink-0', colorClass ?? 'bg-blue-50']">
+      <component :is="icon" :size="22" :class="iconColor ?? 'text-gray-500'" />
     </div>
     <div class="min-w-0">
       <p class="text-2xl font-bold text-gray-900 leading-tight">{{ value }}</p>

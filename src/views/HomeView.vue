@@ -3,6 +3,7 @@ import AppHeader from '@/components/AppHeader.vue'
 import StatCard from '@/components/StatCard.vue'
 import SectorCard from '@/components/SectorCard.vue'
 import { useRoadmapStore } from '@/stores/roadmap'
+import { Landmark, Layers, CalendarDays, Target } from '@lucide/vue'
 
 const store = useRoadmapStore()
 const { sectors, roadmapStats } = store
@@ -12,28 +13,32 @@ const stats = [
     label: 'Sectors',
     value: roadmapStats.totalSectors,
     sublabel: 'Strategic focus areas',
-    icon: '🏛️',
+    icon: Landmark,
+    iconColor: 'text-blue-600',
     colorClass: 'bg-blue-50',
   },
   {
     label: 'Subsectors',
     value: roadmapStats.totalSubsectors,
     sublabel: 'Implementation areas',
-    icon: '📌',
+    icon: Layers,
+    iconColor: 'text-teal-600',
     colorClass: 'bg-teal-50',
   },
   {
     label: 'Timeline',
     value: `${roadmapStats.timelineStart}–${roadmapStats.timelineEnd}`,
     sublabel: '5 implementation phases',
-    icon: '📅',
+    icon: CalendarDays,
+    iconColor: 'text-amber-600',
     colorClass: 'bg-amber-50',
   },
   {
     label: 'Phase Entries',
     value: roadmapStats.totalPhaseEntries,
     sublabel: 'Milestones, KPIs & programs',
-    icon: '🎯',
+    icon: Target,
+    iconColor: 'text-green-600',
     colorClass: 'bg-green-50',
   },
 ]
@@ -71,7 +76,8 @@ const stats = [
             :value="stat.value"
             :sublabel="stat.sublabel"
             :icon="stat.icon"
-            :colorClass="stat.colorClass"
+            :icon-color="stat.iconColor"
+            :color-class="stat.colorClass"
           />
         </div>
       </section>
