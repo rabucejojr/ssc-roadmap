@@ -10,7 +10,16 @@ export const SECTOR_COLORS: Record<string, string> = {
   infrastructure: 'slate',
 }
 
-export type SectorColorSet = { bg: string; border: string; badge: string; text: string; light: string }
+export type SectorColorSet = {
+  bg: string
+  border: string
+  badge: string
+  text: string
+  textSub: string
+  light: string
+  hoverBorder: string
+  hoverText: string
+}
 
 export const SECTOR_COLOR_CLASSES: Record<string, SectorColorSet> = {
   blue: {
@@ -18,35 +27,50 @@ export const SECTOR_COLOR_CLASSES: Record<string, SectorColorSet> = {
     border: 'border-blue-600',
     badge: 'bg-blue-100 text-blue-800',
     text: 'text-blue-700',
+    textSub: 'text-blue-500',
     light: 'bg-blue-50',
+    hoverBorder: 'hover:border-blue-500',
+    hoverText: 'hover:text-blue-700',
   },
   emerald: {
     bg: 'bg-emerald-700',
     border: 'border-emerald-600',
     badge: 'bg-emerald-100 text-emerald-800',
     text: 'text-emerald-700',
+    textSub: 'text-emerald-500',
     light: 'bg-emerald-50',
+    hoverBorder: 'hover:border-emerald-500',
+    hoverText: 'hover:text-emerald-700',
   },
   amber: {
     bg: 'bg-amber-600',
     border: 'border-amber-500',
     badge: 'bg-amber-100 text-amber-800',
     text: 'text-amber-700',
+    textSub: 'text-amber-500',
     light: 'bg-amber-50',
+    hoverBorder: 'hover:border-amber-500',
+    hoverText: 'hover:text-amber-700',
   },
   green: {
     bg: 'bg-green-700',
     border: 'border-green-600',
     badge: 'bg-green-100 text-green-800',
     text: 'text-green-700',
+    textSub: 'text-green-500',
     light: 'bg-green-50',
+    hoverBorder: 'hover:border-green-500',
+    hoverText: 'hover:text-green-700',
   },
   slate: {
     bg: 'bg-slate-700',
     border: 'border-slate-600',
     badge: 'bg-slate-100 text-slate-800',
     text: 'text-slate-700',
+    textSub: 'text-slate-500',
     light: 'bg-slate-50',
+    hoverBorder: 'hover:border-slate-500',
+    hoverText: 'hover:text-slate-700',
   },
 }
 
