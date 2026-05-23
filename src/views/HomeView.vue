@@ -93,7 +93,7 @@ const stats = [
       </section>
 
       <footer class="border-t border-gray-200 bg-white mt-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
           <p class="text-sm text-gray-400">
             SSC Roadmap Dashboard — Provincial Government of Surigao del Norte &middot; 2028–2040
           </p>
